@@ -3,8 +3,7 @@ window.addEventListener("load", () => {
   const WELCOME = document.createElement("h1");
   const BUTTON = document.createElement("button");
   const HEIGHT = "20rem";
-  WELCOME.innerHTML =
-    "<span>I</span><span>v</span><span>e</span><span>X</span>";
+  WELCOME.innerHTML = "IveX";
   WELCOME.classList.add("welcome");
   CONTAINER.classList.add("container");
   BUTTON.innerText = "Change Color";
@@ -12,20 +11,19 @@ window.addEventListener("load", () => {
   document.body.appendChild(CONTAINER);
   document.body.appendChild(BUTTON);
   // Welcome Animation
-  const SPANS = WELCOME.querySelectorAll("span");
-  SPANS.forEach((span) => {
-    span.animate(
-      [
-        { transform: "translateY(0)" },
-        { transform: `translateY(1rem)` },
-        { transform: "translateY(0)" },
-      ],
-      {
-        duration: 2000,
-        iterations: Infinity,
-      }
-    );
-  });
+
+  WELCOME.animate(
+    [
+      { transform: "translateY(0)" },
+      { transform: `translateY(1rem)` },
+      { transform: "translateY(0)" },
+    ],
+    {
+      duration: 2000,
+      iterations: Infinity,
+    }
+  );
+
   // Box Animation
   let degrees = 360;
   for (let i = 0; i < 24; i++) {
