@@ -1,2 +1,2 @@
-# js-star
+# Star
 Easy Fun Animation
