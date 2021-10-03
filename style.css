@@ -68,7 +68,22 @@ button::selection {
 
 .box {
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 20rem;
   height: 20rem;
   border: 1px solid #63d124;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 20rem;
+    height: 30rem;
+  }
+
+  .box {
+    width: 10rem;
+    height: 10rem;
+  }
 }

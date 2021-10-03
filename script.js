@@ -2,7 +2,8 @@ window.addEventListener("load", () => {
   const CONTAINER = document.createElement("div");
   const WELCOME = document.createElement("h1");
   const BUTTON = document.createElement("button");
-  const HEIGHT = "20rem";
+  let animationHeight = window.innerWidth > 768 ? "4rem" : "2rem";
+  let HEIGHT = window.innerWidth > 768 ? "20rem" : "10rem";
   WELCOME.innerHTML = "IveX";
   WELCOME.classList.add("welcome");
   CONTAINER.classList.add("container");
@@ -11,7 +12,6 @@ window.addEventListener("load", () => {
   document.body.appendChild(CONTAINER);
   document.body.appendChild(BUTTON);
   // Welcome Animation
-
   WELCOME.animate(
     [
       { transform: "translateY(0)" },
@@ -23,7 +23,6 @@ window.addEventListener("load", () => {
       iterations: Infinity,
     }
   );
-
   // Box Animation
   let degrees = 360;
   for (let i = 0; i < 24; i++) {
@@ -40,7 +39,7 @@ window.addEventListener("load", () => {
         {
           transform: `rotate(${degrees}deg)`,
           borderRadius: "50%",
-          height: "4rem",
+          height: animationHeight,
         },
         {
           transform: `rotate(${0}deg)`,
@@ -67,5 +66,43 @@ window.addEventListener("load", () => {
     BUTTON.style.color = COLOR;
     BUTTON.style.borderColor = COLOR;
     BUTTON.style.outlineColor = COLOR;
+  });
+});
+
+// Responsiveness
+window.addEventListener("resize", () => {
+  animationHeight = window.innerWidth > 768 ? "4rem" : "2rem";
+  HEIGHT = window.innerWidth > 768 ? "20rem" : "10rem";
+
+  const BOXES = document.querySelectorAll(".box");
+  let degrees = 360;
+
+  BOXES.forEach((box) => {
+    box.animate(
+      [
+        // KEYFRAMES
+        {
+          transform: `rotate(${0}deg)`,
+          borderRadius: "0%",
+          height: HEIGHT,
+        },
+        {
+          transform: `rotate(${degrees}deg)`,
+          borderRadius: "50%",
+          height: animationHeight,
+        },
+        {
+          transform: `rotate(${0}deg)`,
+          borderRadius: "0%",
+          height: HEIGHT,
+        },
+      ],
+      {
+        // TIMING
+        duration: 4000,
+        iterations: Infinity,
+      }
+    );
+    degrees -= 15;
   });
 });
