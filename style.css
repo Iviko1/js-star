@@ -5,9 +5,11 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
   min-height: 100vh;
   display: flex;
@@ -18,11 +20,27 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-span {
-  display: inline-block;
+a {
+  text-decoration: none;
 }
 
-button {
+.name {
+  font-size: 5rem;
+  letter-spacing: 0.2rem;
+  color: #63d124;
+  cursor: pointer;
+}
+
+.name:hover {
+  opacity: 0.7;
+}
+
+.name::selection {
+  background-color: #63d124;
+  color: #232323;
+}
+
+.btn {
   min-width: 8rem;
   min-height: 4rem;
   padding: 1rem;
@@ -38,16 +56,17 @@ button {
   border-radius: 0.4rem;
 }
 
-button:hover {
+.btn:hover {
   outline-offset: 0.4rem;
+  opacity: 0.7;
 }
 
-button::selection {
+.btn::selection {
   background-color: #63d124;
   color: #232323;
 }
 
-.container {
+.box-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,15 +74,6 @@ button::selection {
   height: 40rem;
   margin: 0 auto;
   position: relative;
-}
-.welcome {
-  color: #63d124;
-  font-size: 5rem;
-  cursor: pointer;
-}
-.welcome span::selection {
-  background-color: #63d124;
-  color: #232323;
 }
 
 .box {
@@ -76,8 +86,8 @@ button::selection {
   border: 1px solid #63d124;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
+@media screen and (max-width: 480px) {
+  .box-container {
     width: 20rem;
     height: 30rem;
   }
